@@ -28,7 +28,7 @@ time.sleep(2)
 
 #Realizando Login no sistema#
 
-driver.find_element(By.ID, "username").send_keys("02120700451")
+driver.find_element(By.ID, "username").send_keys("48022080497")
 time.sleep(1)
 driver.find_element(By.ID, "password").send_keys("123")
 time.sleep(1)
@@ -36,9 +36,8 @@ driver.find_element(By.ID, "kc-login").click()
 time.sleep(1)
 driver.find_element(By.CLASS_NAME, "botao-menu").click()
 time.sleep(1)
-driver.find_element(By.XPATH, "//a[contains(text(), 'Processo')]").click()
+driver.find_element(By.XPATH, "//a[contains(text(), 'Audiências e sessões')]").click()
 time.sleep(2)
-driver.find_element(By.PARTIAL_LINK_TEXT, "Pesquisar").click()
-time.sleep(2)
-driver.find_element(By.XPATH, "//a[contains(text(), 'Processo')]")
+driver.find_element(By.PARTIAL_LINK_TEXT, "Pauta de audiência").click()
+
 time.sleep(1000)

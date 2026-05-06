@@ -50,7 +50,7 @@ time.sleep(2)
 contar("Digite o usuário", lambda: driver.find_element(By.ID, "username").send_keys("02112357417"))
 time.sleep(1)
 
-contar("Digite a senha", lambda: driver.find_element(By.ID, "password").send_keys("tjpe1917"))
+contar("Digite a senha", lambda: driver.find_element(By.ID, "password").send_keys("tjpe1977"))
 time.sleep(1)
 
 contar("Clique no botão login", lambda: driver.find_element(By.ID, "kc-login").click())
