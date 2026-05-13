@@ -1,0 +1,38 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By 
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+
+# Configurações básicas do Chrome
+chrome_options = Options()
+chrome_options.add_argument("--start-maximized")
+
+# Inicializa o driver
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=chrome_options)
+
+# Acessa o site
+driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-2g/home.seam")
+
+
+time.sleep(2)
+
+#Realizando Login no sistema#
+
+driver.find_element(By.ID, "username").send_keys("13799253807")
+time.sleep(1)
+driver.find_element(By.ID, "password").send_keys("123")
+time.sleep(1)
+driver.find_element(By.ID, "kc-login").click()
+time.sleep(1)
+driver.find_element(By.CLASS_NAME, "botao-menu").click()
+time.sleep(1)
+driver.find_element(By.XPATH, "//a[contains(text(), 'Download')]").click()
+time.sleep(2)
+driver.find_element(By.PARTIAL_LINK_TEXT, "Área de download").click()
+
+
+
+time.sleep(1000)

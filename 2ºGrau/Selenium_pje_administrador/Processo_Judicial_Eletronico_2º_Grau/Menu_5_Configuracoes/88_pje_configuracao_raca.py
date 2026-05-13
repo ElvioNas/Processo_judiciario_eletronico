@@ -16,14 +16,7 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 # Acessa o site
 driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-2g/home.seam")
 
-#driver.find_element(By.ID, "element_id")
-#driver.find_element(By.NAME, "element_name")
-#driver.find_element(By.CLASS_NAME, "class_name")
-#driver.find_element(By.TAG_NAME, "tag")
-#driver.find_element(By.LINK_TEXT, "Texto do Link")
-#driver.find_element(By.PARTIAL_LINK_TEXT, "Parte do Texto")
-#driver.find_element(By.CSS_SELECTOR, "css.selector")
-#driver.find_element(By.XPATH, "//div[@id='example']")
+
 time.sleep(2)
 
 #Realizando Login no sistema#
@@ -62,13 +55,10 @@ driver.find_element(By.XPATH, "//label[contains(text(), 'Inativo')]")
 time.sleep(1)
 driver.find_element(By.XPATH, "//td[contains(text(), 'Pesquisa')]").click()
 time.sleep(1)
-#driver.find_element(By.XPATH, "//input[contains(text(), 'Pesquisa')]").click()
+
 #time.sleep(2)
 driver.find_element(By.ID, "etniaGridSearchForm:j_id180:j_id182:etnia").send_keys("QUILOMBOLA")
 time.sleep(2)
-#driver.find_element(By.PARTIAL_LINK_TEXT, "Autos Digitais").click()
-#time.sleep(1)
-#driver.find_element(By.XPATH, "//a[contains(text(), 'Link Personalizável')]")
-#time.sleep(1)
+
 
 time.sleep(1000)

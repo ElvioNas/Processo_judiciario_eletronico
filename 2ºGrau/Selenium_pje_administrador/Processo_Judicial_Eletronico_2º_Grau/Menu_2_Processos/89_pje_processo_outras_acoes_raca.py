@@ -48,8 +48,7 @@ driver.find_element(By.XPATH, "//input[contains(@value, 'Pesquisar')]").click()
 time.sleep(5)
 driver.find_element(By.ID, "consultaProcessoRetificacaoAutuacaoGridList:0:j_id241:j_id242:j_id244").click()
 time.sleep(8)
-#driver.find_element(By.XPATH, "//td[text()='Partes']").click()
-#driver.find_element(By.XPATH, "//td[contains(text(), 'Partes')]").click()
+
 
 #driver.find_element(By.ID, "tabPartes_lbl").click()
 driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-1g/Processo/RetificacaoAutuacao/updateRetificacaoAutuacao.seam?idProcesso=6188959&tab=form")

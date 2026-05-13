@@ -31,9 +31,7 @@ driver.find_element(By.XPATH, "//a[contains(text(), 'Painel')]").click()
 time.sleep(2)
 #driver.find_element(By.PARTIAL_LINK_TEXT, "Painel do representante processual").click()
 
-#driver.find_element(By.XPATH, "//a[contains(text(), 'Painel do representante processual')]")
-#driver.find_element(By.XPATH, "//a[contains(text(), 'Painel de expedientes')]")
-#driver.find_element(By.XPATH, "//a[contains(text(), 'Painel do usuário')]")
+
 driver.find_element(By.XPATH, "//a[contains(text(), 'Painel do usuário')]")
 driver.find_element(By.XPATH, "//a[contains(text(), 'Painel do magistrado na sessão')]")
 driver.find_element(By.XPATH, "//a[contains(text(), 'Painel do secretário da sessão')]")
