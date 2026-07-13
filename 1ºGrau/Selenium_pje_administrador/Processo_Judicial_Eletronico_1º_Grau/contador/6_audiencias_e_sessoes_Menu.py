@@ -1,9 +1,8 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By 
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 import time
+
 
 # ==============================
 # CONTADOR ESTILO CYPRESS
@@ -39,14 +38,10 @@ def contar(by, valor, acao=None, texto=None):
 # ==============================
 
 chrome_options = Options()
+
 chrome_options.add_argument("--start-maximized")
 
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=chrome_options)
-
-# ==============================
-# ACESSA O SITE
-# ==============================
+driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-1g/home.seam")
 
@@ -62,7 +57,7 @@ time.sleep(2)
 contar(By.ID, "password", "send_keys", "tjpe1977")
 time.sleep(2)
 
-contar(By.ID, "kc-login", "click")
+contar(By.ID, "btnEntrar", "click")
 time.sleep(2)
 
 # ==============================

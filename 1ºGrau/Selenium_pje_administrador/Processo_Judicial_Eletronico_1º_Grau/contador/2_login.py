@@ -27,15 +27,16 @@ def contar_find_element(by, valor):
         return None
 
 
-# Configurações básicas do Chrome
+# ==============================
+# CONFIGURAÇÃO DO CHROME
+# ==============================
+
 chrome_options = Options()
+
 chrome_options.add_argument("--start-maximized")
 
-# Inicializa o driver
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 
-# Acessa o site
 driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-1g/home.seam")
 
 time.sleep(2)
@@ -54,7 +55,7 @@ if elemento:
 
 time.sleep(2)
 
-elemento = contar_find_element(By.ID, "kc-login")
+elemento = contar_find_element(By.ID, "btnEntrar")
 if elemento:
     elemento.click()
 

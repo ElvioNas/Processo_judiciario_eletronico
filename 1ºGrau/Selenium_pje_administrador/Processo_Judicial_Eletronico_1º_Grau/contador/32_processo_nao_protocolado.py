@@ -1,8 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By 
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 # ==============================
@@ -30,17 +28,15 @@ def contar(descricao, funcao):
 
 
 # ==============================
-# CONFIGURAÇÕES DO CHROME
+# CONFIGURAÇÃO DO CHROME
 # ==============================
+
 chrome_options = Options()
+
 chrome_options.add_argument("--start-maximized")
 
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 
-# ==============================
-# ACESSA O SITE
-# ==============================
 driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-1g/home.seam")
 time.sleep(2)
 
@@ -53,7 +49,7 @@ time.sleep(1)
 contar("Digite a senha", lambda: driver.find_element(By.ID, "password").send_keys("tjpe1977"))
 time.sleep(1)
 
-contar("Clique no botão login", lambda: driver.find_element(By.ID, "kc-login").click())
+contar("Clique no botão login", lambda: driver.find_element(By.ID, "btnEntrar").click())
 time.sleep(1)
 
 # ==============================

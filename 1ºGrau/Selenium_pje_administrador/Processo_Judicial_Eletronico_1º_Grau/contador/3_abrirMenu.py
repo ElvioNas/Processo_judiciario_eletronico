@@ -1,9 +1,8 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By 
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 import time
+
 
 # ==============================
 # CONTADORES
@@ -27,16 +26,18 @@ def contar(by, valor):
         return None
 
 
-# Configurações básicas do Chrome
+# ==============================
+# CONFIGURAÇÃO DO CHROME
+# ==============================
+
 chrome_options = Options()
+
 chrome_options.add_argument("--start-maximized")
 
-# Inicializa o driver
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 
-# Acessa o site
 driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-1g/home.seam")
+
 
 time.sleep(2)
 
@@ -56,7 +57,7 @@ if elemento:
 
 time.sleep(2)
 
-elemento = contar(By.ID, "kc-login")
+elemento = contar(By.ID, "btnEntrar")
 if elemento:
     elemento.click()
 
