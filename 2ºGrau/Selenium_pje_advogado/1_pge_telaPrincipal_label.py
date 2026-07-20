@@ -33,8 +33,8 @@ assert elemento.text == "Manuais"
 elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Fale conosco')]")
 assert elemento.text == "Fale conosco"
 
-elemento = driver.find_element(By.XPATH, "//p[contains(text(), 'Processo Judicial Eletrônico 1º Grau')]")
-assert elemento.text == "Processo Judicial Eletrônico 1º Grau"
+elemento = driver.find_element(By.XPATH, "//p[contains(text(), 'Processo Judicial Eletrônico 2º Grau')]")
+assert elemento.text == "Processo Judicial Eletrônico 2º Grau"
 
 elemento = driver.find_element(By.XPATH, "//p[contains(text(), 'Poder Judiciário de Pernambuco')]")
 assert elemento.text == "Poder Judiciário de Pernambuco"

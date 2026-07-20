@@ -1,25 +1,16 @@
-
 from selenium import webdriver
-from selenium.webdriver.common.by import By 
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-
-
-# Configurações básicas do Chrome
 chrome_options = Options()
 chrome_options.add_argument("--start-maximized")
 
-# Inicializa o driver
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 
 # Acessa o site
-
-
 driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-2g/home.seam")
+time.sleep(2)
 
 time.sleep(2)
 
@@ -28,11 +19,11 @@ time.sleep(2)
 elemento = driver.find_element(By.XPATH, "//span[contains(text(), 'Processo Judicial Eletrônico')]")
 assert elemento.text == "Processo Judicial Eletrônico"
 
-elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Formas de Acesso')]")
-assert elemento.text == "Formas de Acesso"
+elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Formas de acesso')]")
+assert elemento.text == "Formas de acesso"
 
-elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Consulta Processual')]")
-assert elemento.text == "Consulta Processual"
+elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Consulta processual')]")
+assert elemento.text == "Consulta processual"
 
 elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Push')]")
 assert elemento.text == "Push"
@@ -40,8 +31,8 @@ assert elemento.text == "Push"
 elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Manuais')]")
 assert elemento.text == "Manuais"
 
-elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Fale Conosco')]")
-assert elemento.text == "Fale Conosco"
+elemento = driver.find_element(By.XPATH, "//a[contains(text(), 'Fale conosco')]")
+assert elemento.text == "Fale conosco"
 
 elemento = driver.find_element(By.XPATH, "//p[contains(text(), 'Processo Judicial Eletrônico 2º Grau')]")
 assert elemento.text == "Processo Judicial Eletrônico 2º Grau"

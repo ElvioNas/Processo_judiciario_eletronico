@@ -10,7 +10,6 @@ driver = webdriver.Chrome(options=chrome_options)
 
 # Acessa o site
 driver.get("https://homologacao-pje.app.tjpe.jus.br/h06-2g/home.seam")
-
 time.sleep(2)
 
 #Realizando Login no sistema#
